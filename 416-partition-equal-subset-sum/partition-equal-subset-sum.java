@@ -11,9 +11,9 @@ class Solution {
         }
         else{
             int W = sum/2;
-            int dp[][] = new int[n+1][W+1];
+            boolean dp[][] = new boolean[n+1][W+1];
             for(int i = 0;i<=n;i++){
-                dp[i][0] =  1;
+                dp[i][0] =  true;
             }
 
             for(int i = 1; i<=n; i++){
@@ -24,13 +24,11 @@ class Solution {
                     }
                     else{
                     //if he plays
-                        dp[i][j] =(dp[i-1][j]+dp[i-1][j-nums[i-1]])%100000009;
+                        dp[i][j] =dp[i-1][j] || dp[i-1][j-nums[i-1]];
                     }
                 }
             }
-
-            if(dp[n][W]>=1) return true;
-            else return false;
+            return dp[n][W];
         }
     }
 }
