@@ -10,7 +10,8 @@ class Solution {
 
                     int min = Math.min(a, Math.min(b, c));
 
-                    matrix[i+1][j+1] = (char)(min + 1 + '0');
+                    matrix[i+1][j+1] = (char)(min + 1 + '0');  //+'0' isiliye add kr rhey taki ascii value me change
+                                                                //hojaye  aur phir usko char se convert kr derhe 
                 }
             }
         }
