@@ -17,8 +17,6 @@ class Solution {
                 result.add(pair);
             }
         }
-
         return result;
-
     }
 }
