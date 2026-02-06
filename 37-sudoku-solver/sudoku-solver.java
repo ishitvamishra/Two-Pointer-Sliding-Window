@@ -1,5 +1,9 @@
 class Solution {
-    public boolean solveSudoku(char[][] board) {
+    public void solveSudoku(char[][] board) {
+        solve(board);
+    }
+
+    public boolean solve(char[][] board) {
         for(int i = 0; i < 9; i++){
             for(int j = 0; j < 9; j++){
                 
@@ -10,7 +14,7 @@ class Solution {
                         if(isSafe(board, i, j, c)){
                             board[i][j] = c;
                             
-                            if(solveSudoku(board))
+                            if(solve(board))
                                 return true;
                             
                             board[i][j] = '.'; // backtrack
