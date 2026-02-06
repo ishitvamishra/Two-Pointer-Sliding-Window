@@ -6,7 +6,7 @@ class Solution {
         int window = 1;
 
         for (int right = 0; right < n; right++) {
-            while (nums[right] > (long)nums[left] * k) {
+            if (nums[right] > (long)nums[left] * k) {
                 left++;
             }
             window = Math.max(window, right - left + 1);
